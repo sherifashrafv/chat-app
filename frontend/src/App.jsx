@@ -2,9 +2,9 @@ import Navbar from "../src/components/NavBar";
 
 import HomePage from "../src/pages/HomePage";
 import SignUpPage from "../src/pages/SignUpPage";
-// import LoginPage from "../src/pages/LoginPage";
-// import SettingsPage from "../src/pages/SettingsPage";
-// import ProfilePage from "../src/pages/ProfilePage";
+import LoginPage from "../src/pages/LoginPage";
+import SettingsPage from "../src/pages/SettingsPage";
+import ProfilePage from "../src/pages/ProfilePage";
 
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useAuthStore } from "./store/useAuthStore";
@@ -46,15 +46,15 @@ const App = () => {
           path="/signup"
           element={!authUser ? <SignUpPage /> : <Navigate to="/" />}
         />
-        {/* <Route
+        <Route
           path="/login"
           element={!authUser ? <LoginPage /> : <Navigate to="/" />}
-        /> */}
-        {/* <Route path="/settings" element={<SettingsPage />} />
+        />
+        <Route path="/settings" element={<SettingsPage />} />
         <Route
           path="/profile"
           element={authUser ? <ProfilePage /> : <Navigate to="/login" />}
-        /> */}
+        />
       </Routes>
 
       <Toaster />
